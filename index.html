@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM Manipulation Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    .container {
+      padding: 20px;
+      border: 2px solid #ccc;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- H1 to be changed via JavaScript -->
+  <h1 id="main-heading">Original Heading</h1>
+
+  <!-- Paragraphs to be styled -->
+  <p>This is the first paragraph.</p>
+  <p>This is the second paragraph.</p>
+  <p>This is the third paragraph.</p>
+
+  <!-- Container to be styled via querySelector -->
+  <div class="container">
+    <p>This is content inside a container div.</p>
+  </div>
+
+  <script>
+    // 1. Select the <h1> by id and change its text
+    const heading = document.getElementById('main-heading');
+    heading.textContent = 'Welcome to the DOM World!';
+
+    // 2. Select all <p> elements and set their text color to blue
+    const paragraphs = document.getElementsByTagName('p');
+    for (let i = 0; i < paragraphs.length; i++) {
+      paragraphs[i].style.color = 'blue';
+    }
+
+    // 3. Select the first <div> with class "container" and change background
+    const containerDiv = document.querySelector('.container');
+    containerDiv.style.backgroundColor = 'yellow';
+  </script>
+
+</body>
+</html>
